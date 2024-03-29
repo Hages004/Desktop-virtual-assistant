@@ -157,7 +157,7 @@ if __name__ == "__main__":
                         results=wikipedia.summary(query, sentences  =1)
                         speak("According to wikipedia")
                         print(results)
-                        speak(results) 
+                        speak(results)  
                     except:
                         print("No results found") 
 
@@ -180,6 +180,10 @@ if __name__ == "__main__":
                 elif 'open file explorer' in query:
                     subprocess.Popen(['explorer.exe'])
                     speak('Opening File Explorer')
+
+                elif 'screen shot'in query:
+                    pyautogui.press('ptr sc')
+                    speak("taking screen shot")    
 
                 elif 'tell me a joke' in query:
                     speak('Here is a joke for you: ' + str(pyjokes.get_joke()))       
